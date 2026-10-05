@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+.env
+.env.local
+
+# Datos procesados (no versionar)
+data/processed/*
+!data/processed/.gitkeep
+
+# VSCode
+.vscode/
+*.code-workspace
+
+# SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
