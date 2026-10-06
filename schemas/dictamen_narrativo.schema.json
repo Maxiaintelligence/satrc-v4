@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caritas-tulancingo.org/schemas/dictamen_narrativo.json",
+  "title": "DictamenNarrativoGroq",
+  "type": "object",
+  "required": ["dictamenes"],
+  "properties": {
+    "dictamenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["loc_id_global", "titulo", "causa", "recomendaciones", "contexto"],
+        "properties": {
+          "loc_id_global": { "type": "string" },
+          "titulo": { "type": "string", "maxLength": 100 },
+          "causa": { "type": "string", "maxLength": 300 },
+          "recomendaciones": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2,
+            "maxItems": 5
+          },
+          "contexto": { "type": "string", "maxLength": 300 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
