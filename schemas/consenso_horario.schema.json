@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caritas-tulancingo.org/schemas/consenso_horario.json",
+  "title": "ConsensoHorarioLocalidad",
+  "type": "object",
+  "required": [
+    "loc_id_global",
+    "timestamp_utc6",
+    "hora_relativa",
+    "lluvia_consenso_mm",
+    "temperatura_consenso_c",
+    "viento_max_kmh",
+    "rafaga_max_kmh",
+    "humedad_relativa_pct",
+    "visibilidad_m",
+    "spread_lluvia_mm",
+    "confiabilidad"
+  ],
+  "properties": {
+    "loc_id_global": { "type": "string" },
+    "timestamp_utc6": { "type": "string", "format": "date-time" },
+    "hora_relativa": { "type": "integer", "minimum": 0, "maximum": 191 },
+    "lluvia_consenso_mm": { "type": "number", "minimum": 0 },
+    "temperatura_consenso_c": { "type": "number" },
+    "viento_max_kmh": { "type": "number", "minimum": 0 },
+    "rafaga_max_kmh": { "type": "number", "minimum": 0 },
+    "humedad_relativa_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+    "visibilidad_m": { "type": "number", "minimum": 0 },
+    "spread_lluvia_mm": { "type": "number", "minimum": 0 },
+    "confiabilidad": {
+      "type": "string",
+      "enum": ["ALTA", "MODERADA", "EN_DISPUTA"]
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caritas-tulancingo.org/schemas/evaluacion_localidad.json",
+  "title": "EvaluacionLocalidad",
+  "type": "object",
+  "required": [
+    "loc_id_global",
+    "zona_id",
+    "timestamp_evaluacion",
+    "nivel_alerta",
+    "color_alerta",
+    "vectores",
+    "metricas_clave",
+    "impacto_sistemico"
+  ],
+  "properties": {
+    "loc_id_global": { "type": "string" },
+    "zona_id": { "type": "string" },
+    "timestamp_evaluacion": { "type": "string", "format": "date-time" },
+    "nivel_alerta": { "type": "integer", "minimum": 1, "maximum": 4 },
+    "color_alerta": { "type": "string", "enum": ["VERDE", "AMARILLO", "NARANJA", "ROJO"] },
+    "vectores": {
+      "type": "object",
+      "required": ["deslave", "inundacion", "viento", "temperatura"],
+      "properties": {
+        "deslave": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "inundacion": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "viento": { "type": "integer", "minimum": 1, "maximum": 4 },
+        "temperatura": { "type": "integer", "minimum": 1, "maximum": 4 }
+      },
+      "additionalProperties": false
+    },
+    "metricas_clave": {
+      "type": "object",
+      "required": [
+        "lluvia_acumulada_24h_mm",
+        "lluvia_horaria_max_mm",
+        "hora_pico",
+        "temperatura_min_c",
+        "temperatura_max_c",
+        "viento_max_kmh",
+        "rafaga_max_kmh",
+        "visibilidad_min_m",
+        "api_7dias_mm",
+        "saturacion_total_mm",
+        "umbral_deslave_mm",
+        "spread_max_mm"
+      ],
+      "properties": {
+        "lluvia_acumulada_24h_mm": { "type": "number", "minimum": 0 },
+        "lluvia_horaria_max_mm": { "type": "number", "minimum": 0 },
+        "hora_pico": { "type": "string", "format": "date-time" },
+        "temperatura_min_c": { "type": "number" },
+        "temperatura_max_c": { "type": "number" },
+        "viento_max_kmh": { "type": "number", "minimum": 0 },
+        "rafaga_max_kmh": { "type": "number", "minimum": 0 },
+        "visibilidad_min_m": { "type": "number", "minimum": 0 },
+        "api_7dias_mm": { "type": "number", "minimum": 0 },
+        "saturacion_total_mm": { "type": "number", "minimum": 0 },
+        "umbral_deslave_mm": { "type": "number", "minimum": 0 },
+        "spread_max_mm": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "impacto_sistemico": {
+      "type": "object",
+      "required": [
+        "es_comunidad_serrana",
+        "poblacion_afectada",
+        "poblacion_aguas_arriba",
+        "aislamiento_vial_posible"
+      ],
+      "properties": {
+        "es_comunidad_serrana": { "type": "boolean" },
+        "poblacion_afectada": { "type": "integer", "minimum": 0 },
+        "poblacion_aguas_arriba": { "type": "integer", "minimum": 0 },
+        "aislamiento_vial_posible": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

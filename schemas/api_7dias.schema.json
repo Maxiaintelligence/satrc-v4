@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caritas-tulancingo.org/schemas/api_7dias.json",
+  "title": "MemoriaHidricaLocalidad",
+  "type": "object",
+  "required": [
+    "loc_id_global",
+    "timestamp_calculo",
+    "api_7dias_mm",
+    "api_modelo_crudo_mm",
+    "api_satelite_mm",
+    "diferencia_satelite_mm",
+    "estado_historial",
+    "ajuste_satelital_aplicado"
+  ],
+  "properties": {
+    "loc_id_global": { "type": "string" },
+    "timestamp_calculo": { "type": "string", "format": "date-time" },
+    "api_7dias_mm": { "type": "number", "minimum": 0 },
+    "api_modelo_crudo_mm": { "type": "number", "minimum": 0 },
+    "api_satelite_mm": { "type": "number", "minimum": 0 },
+    "diferencia_satelite_mm": { "type": "number", "minimum": 0 },
+    "estado_historial": {
+      "type": "string",
+      "enum": ["COMPLETO", "INCOMPLETO_CON_PISO"]
+    },
+    "ajuste_satelital_aplicado": { "type": "boolean" }
+  },
+  "additionalProperties": false
+}

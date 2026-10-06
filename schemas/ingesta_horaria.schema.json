@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://caritas-tulancingo.org/schemas/ingesta_horaria.json",
+  "title": "IngestaHorariaLocalidad",
+  "type": "object",
+  "required": [
+    "loc_id_global",
+    "timestamp_utc6",
+    "hora_relativa",
+    "modelos",
+    "hashes_fuente"
+  ],
+  "properties": {
+    "loc_id_global": { "type": "string" },
+    "timestamp_utc6": { "type": "string", "format": "date-time" },
+    "hora_relativa": { "type": "integer", "minimum": 0, "maximum": 191 },
+    "modelos": {
+      "type": "object",
+      "required": ["ecmwf_aifs025", "ncep_nbm", "icon_seamless"],
+      "additionalProperties": false,
+      "properties": {
+        "ecmwf_aifs025": { "$ref": "#/$defs/VariablesMeteorologicas" },
+        "ncep_nbm": { "$ref": "#/$defs/VariablesMeteorologicas" },
+        "icon_seamless": { "$ref": "#/$defs/VariablesMeteorologicas" }
+      }
+    },
+    "hashes_fuente": {
+      "type": "object",
+      "required": ["ecmwf", "gfs", "icon"],
+      "properties": {
+        "ecmwf": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "gfs": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "icon": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "VariablesMeteorologicas": {
+      "type": "object",
+      "required": [
+        "lluvia_mm",
+        "temperatura_c",
+        "viento_max_kmh",
+        "rafaga_max_kmh",
+        "humedad_relativa_pct",
+        "visibilidad_m"
+      ],
+      "properties": {
+        "lluvia_mm": { "type": "number", "minimum": 0 },
+        "temperatura_c": { "type": "number" },
+        "viento_max_kmh": { "type": "number", "minimum": 0 },
+        "rafaga_max_kmh": { "type": "number", "minimum": 0 },
+        "humedad_relativa_pct": { "type": "number", "minimum": 0, "maximum": 100 },
+        "visibilidad_m": { "type": "number", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  }
+}
