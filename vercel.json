@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "functions": {
+    "api/sara.js": {
+      "runtime": "nodejs22.x",
+      "maxDuration": 60
+    }
+  }
+}

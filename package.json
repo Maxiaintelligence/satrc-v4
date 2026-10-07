@@ -1,0 +1,30 @@
+{
+  "name": "satrc-v4",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Sistema de Alerta Temprana ante Riesgos Hidrometeorológicos y Climáticos - Arquidiócesis de Tulancingo",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --env-file-if-exists=.env.local src/index.js",
+    "test": "node --test",
+    "lint": "eslint .",
+    "validate-schemas": "node scripts/validate-schemas.js",
+    "pipeline": "node --env-file-if-exists=.env.local scripts/run-pipeline.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.49.1",
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "pino": "9.6.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.21.0",
+    "eslint": "9.21.0",
+    "globals": "16.0.0",
+    "pino-pretty": "13.0.0"
+  }
+}

@@ -1,11 +1,21 @@
 # Dependencias
 node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno
 .env
 .env.local
+.env.*.local
 
 # Datos procesados (no versionar)
 data/processed/*
 !data/processed/.gitkeep
+
+# Logs
+*.log
+logs/
 
 # VSCode
 .vscode/
@@ -16,9 +26,17 @@ data/processed/*
 Thumbs.db
 desktop.ini
 
-# Logs
-*.log
-npm-debug.log*
+# Vercel
+.vercel/
+
+# Cobertura y Tests
+coverage/
+.nyc_output/
+
+# Build y Temporales
+dist/
+build/
+*.tmp
 
 # Supabase local
 supabase/.branches/
