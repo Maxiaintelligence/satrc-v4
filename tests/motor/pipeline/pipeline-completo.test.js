@@ -89,7 +89,7 @@ function crearHistorial168hMock(lluviaHora = 0.0) {
   const hist = [];
   for (let h = 0; h < 168; h++) {
     hist.push({
-      timestamp_utc6: `2026-03-22T00:00:00-06:00`,
+      timestamp_utc6: "2026-03-22T00:00:00-06:00",
       lluvia_consenso_mm: lluviaHora
     });
   }
