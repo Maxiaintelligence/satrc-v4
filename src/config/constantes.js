@@ -237,11 +237,8 @@ export const SERRANA_ALTITUD_MIN_MSNM = 1500;
 // [Sesión 1] Pendiente máxima mínima para clasificar como comunidad serrana (grados)
 export const SERRANA_PENDIENTE_MIN_DEG = 20.0;
 
-// [Sesión 2] Ráfaga para piso Nivel 2 en comunidad serrana (km/h)
-export const SERRANA_GUARDA_RAFAGA_KMH = 50.0;
-
-// [Sesión 2] Lluvia 24h para piso Nivel 2 en comunidad serrana (mm)
-export const SERRANA_GUARDA_LLUVIA_MM = 25.0;
+// [Sesión 4B.5b] Ráfaga para disparo precautorio de Nivel 2 en comunidad serrana (km/h)
+export const SERRANA_GUARDA_RAFAGA_KMH = 40.0;
 
 // ==============================================================================
 // 10. JERARQUÍA Y ORQUESTACIÓN OPERATIVA
