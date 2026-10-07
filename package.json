@@ -10,7 +10,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --env-file-if-exists=.env.local src/index.js",
-    "test": "node --test",
+    "test": "node --env-file-if-exists=.env.test --test",
     "lint": "eslint .",
     "validate-schemas": "node scripts/validate-schemas.js",
     "pipeline": "node --env-file-if-exists=.env.local scripts/run-pipeline.js"
