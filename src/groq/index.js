@@ -1,6 +1,6 @@
 /**
  * @file src/groq/index.js
- * @description Barrel Export del módulo de integración con la API de Groq y construcción de prompts.
+ * @description Barrel Export del módulo de integración con la API de Groq, prompts y fallback determinista.
  */
 
 export {
@@ -20,3 +20,7 @@ export {
   ErrorGroqSchemaInvalido,
   ErrorGroqNivelProhibido
 } from "./cliente.js";
+
+export {
+  generarDictamenFallbackZonal
+} from "./fallback.js";
